@@ -1,12 +1,10 @@
-# E-Commerce-A-B-Test-Causal-Impact-Incrementality-of-Recommendations
-Causal evaluation of e-commerce recommendation systems. Measuring true incremental revenue (iRPU) vs. cannibalization using A/B testing, CUPED variance reduction, and counterfactual modeling.
-# 🛍️ Causal A/B Testing: Incrementality & Variance Reduction in E-Commerce
+# 🛍️ E-Commerce A/B Test Causal Impact Incrementality of Recommendations
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
 [![Status](https://img.shields.io/badge/Status-Completed-success.svg)]()
 
 ## 📌 Executive Summary
-Standard A/B testing often creates an "illusion of growth" where proxy metrics (like CTR) improve, but true business revenue remains flat due to channel cannibalization. 
+Causal evaluation of e-commerce recommendation systems. Measuring true incremental revenue (iRPU) vs. cannibalization using A/B testing, CUPED variance reduction, and counterfactual modeling. 
 
 This project explores the **true incremental impact (iRPU)** of a new Fashion Recommendation System. By building a custom Causal Simulation Engine and applying advanced statistical methods (CUPED, Bootstrap CI, Mediation Analysis), this research demonstrates how to isolate genuine revenue growth from demand redistribution and infrastructure latency.
 
@@ -23,15 +21,3 @@ To establish a verifiable "Ground Truth", I developed a Python-based **Causal Da
 * **Metrics:** ARPU (Average Revenue Per User), iRPU (Incremental RPU), Session Depth, Latency-adjusted CTR.
 * **Techniques Used:** Welch's T-test, Bootstrap Confidence Intervals, CUPED (Variance Reduction), Causal Deep Dives.
 
-## 📁 Project Architecture
-
-├── data/                       # Generated causal datasets (Logs, Users, Counterfactuals)
-├── notebooks/                  # Core analytical workflow
-│   ├── 01_eda_and_sanity_checks.ipynb       # SRM checks, heavy-tail distribution analysis
-│   ├── 02_ab_test_baseline.ipynb            # Standard evaluation vs Ground Truth
-│   ├── 03_cuped_variance_reduction.ipynb    # Covariate adjustment for precision
-│   └── 04_causal_deep_dive.ipynb            # Latency, stock-awareness, and behavioral shifts
-├── src/                        # Source code
-│   ├── data_generation.py      # Custom Causal Simulation Engine
-│   └── stats_utils.py          # CUPED and bootstrap implementations
-└── README.md
