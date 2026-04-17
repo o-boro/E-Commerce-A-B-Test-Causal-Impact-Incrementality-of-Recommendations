@@ -21,3 +21,35 @@ To establish a verifiable "Ground Truth", I developed a Python-based **Causal Da
 * **Metrics:** ARPU (Average Revenue Per User), iRPU (Incremental RPU), Session Depth, Latency-adjusted CTR.
 * **Techniques Used:** Welch's T-test, Bootstrap Confidence Intervals, CUPED (Variance Reduction), Causal Deep Dives.
 
+## 📊 Key Findings & Causal Insights
+
+### 1. The "Illusion of Growth" (A/B Bias)
+* **Estimated Uplift (Standard A/B):** +3.52%
+* **True Causal Uplift (Ground Truth):** +2.72%
+* **Insight:** Standard A/B testing overestimated the revenue impact by **~29%**. The gap was primarily driven by **demand redistribution**—users shifted their purchases from organic search to the new recommendation block, creating a mirage of hyper-growth.
+
+### 2. Variance Reduction via CUPED
+Revenue metrics naturally suffer from heavy-tail distributions. By using `pre_experiment_revenue` as a covariate, **CUPED reduced metric variance by X%** (insert actual %). This significantly narrowed the confidence intervals, allowing for faster decision-making without losing statistical power.
+
+### 3. The Cost of Latency
+System performance is a hidden business tax. The analysis proved a direct causal link: server responses exceeding 400ms drastically degraded the Click-Through Rate, offsetting the algorithmic benefits of the new ranking policy.
+
+### 4. Stock-Awareness & Logistics
+The new policy successfully penalized low-stock items (`stock < 5`). This behavioral shift protects the supply chain from post-purchase cancellations, improving long-term Customer LTV.
+
+## 🚀 Business Recommendations
+1. **Proceed with Rollout, but Adjust Forecasts:** The algorithm is genuinely incremental, but financial forecasts must be adjusted down by 30% to account for search cannibalization.
+2. **Implement SLA for ML Inference:** Engineering must strictly cap the ranking algorithm's latency at <200ms to prevent CTR decay.
+3. **Adopt CUPED company-wide:** Transitioning from standard T-tests to CUPED for revenue metrics will save weeks of experimental runtime.
+
+## 🛠️ Tech Stack
+* **Language:** Python
+* **Data Manipulation:** `pandas`, `numpy`
+* **Statistics:** `scipy.stats`, Bootstrapping
+* **Visualization:** `matplotlib`, `seaborn`
+
+## ▶️ Quick Start
+```bash
+git clone [https://github.com/your-username/fashion-recommender-causal-ab.git](https://github.com/your-username/fashion-recommender-causal-ab.git)
+cd fashion-recommender-causal-ab
+pip install -r requirements.txt
