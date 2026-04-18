@@ -1,6 +1,5 @@
 # E-Commerce A/B Test Causal Impact Incrementality of Recommendations
 
-[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
 [![Status](https://img.shields.io/badge/Status-Completed-success.svg)]()
 
 ## Executive Summary
